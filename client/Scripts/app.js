@@ -105,15 +105,30 @@ $.fn.pageMe = function(opts){
 
 // IIFE
 (function(){
-  $(".btn-danger").click(function(event){
-    if(!confirm("Are you sure?")) {
-      event.preventDefault();
-      window.location.assign("/games");
-    }
-  });
 
+    function Start()
+    {
+        console.log("App Started...");
+
+        let deleteButtons = document.querySelectorAll('.btn-danger');
+        
+        for(var button of deleteButtons)
+        {
+            button.addEventListener('click', (event)=>{
+                if(!confirm("Are you sure?")) 
+                {
+                    event.preventDefault();
+                    window.location.assign('/books');
+                }
+            });
+        }
+    }
+
+    window.addEventListener("load", Start);
+
+})();
  /* pagination code */
   $('#myTable').pageMe(
     {pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:6}
     );
-})();
+
