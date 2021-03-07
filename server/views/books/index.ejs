@@ -1,3 +1,11 @@
+<!--/*
+File Name: index.ejs
+Student Name : Chaitanya Sai Ambarukhana
+Student ID : 301150058
+Date : 07/03/2021
+App Name : Favorite Book List - Midterm
+*/-->
+
 <% include ../partials/header.ejs %>
 
     <!-- MAIN CONTENT -->
@@ -5,9 +13,10 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <h3>Favourite Books List </h3>
-          <!-- ------------------------ -->
-          <!-- FIX THE ADD BUTTON BELOW -->
-          <!-- ------------------------ -->
+          
+          
+          <!-- Added href to the Add page-->
+          
           <a href="books/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
           <br>
           <div class="table-responsive">
@@ -18,8 +27,8 @@
                   <th class="text-center">Price</th>
                   <th class="text-center">Author</th>
                   <th class="text-center">Genre</th>
-                  <th class="text-center">Edit</th>
-                  <th class="text-center">Delete</th>
+                  <th class="text-center">Edit</th><!--Edit heading to the table-->
+                  <th class="text-center">Delete</th><!--Delete heading to the table-->
                 </tr>
                 </thead>
                 <tbody>
@@ -30,11 +39,11 @@
                   <td class="text-center">$<%= books[count].Price %></td>
                   <td class="text-center"><%= books[count].Author %></td>
                   <td class="text-center"><%= books[count].Genre %></td>
-
+                  <!--Edit button for UPDATE actions-->
                   <td class="text-center">
                     <a href='/books/<%= books[count]._id %>' class="btn btn-primary"><i class="fa fa-edit"></i></a>
                   </td>
-
+                  <!--Delete button for DELETE operations-->
                   <td class="text-center">
                     <a href="books/delete/<%= books[count]._id %>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                   </td>

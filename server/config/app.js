@@ -1,3 +1,12 @@
+/*
+File Name: app.js
+Student Name : Chaitanya Sai Ambarukhana
+Student ID : 301150058
+Date : 07/03/2021
+App Name : Favorite Book List - Midterm
+*/
+
+
 // moddules for node and express
 let createError = require('http-errors');
 let express = require('express');
@@ -8,8 +17,9 @@ let logger = require('morgan');
 // import "mongoose" - required for DB Access
 let mongoose = require('mongoose');
 // URI
-let DB = require('./db');
+let DB = require('./db');//importing db file to this moudule
 
+//connectiing to Mongodb through mongoose 
 mongoose.connect(process.env.URI || DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 let mongoDB = mongoose.connection;
@@ -23,6 +33,7 @@ mongoDB.once('open', ()=> {
 let index = require('../routes/index'); // top level routes
 let books = require('../routes/books'); // routes for books
 
+//calling express
 let app = express();
 
 // view engine setup
@@ -39,7 +50,7 @@ app.use(express.static(path.join(__dirname, '../../client')));
 
 // route redirects
 app.use('/', index);
-app.use('/books', books);
+app.use('/books', books);//Using books route
 
 
 // catch 404 and forward to error handler

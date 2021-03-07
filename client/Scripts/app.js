@@ -1,3 +1,12 @@
+/*
+File Name: app.js
+Student Name : Chaitanya Sai Ambarukhana
+Student ID : 301150058
+Date : 07/03/2021
+App Name : Favorite Book List - Midterm
+*/
+
+
 /* custom JS goes here */
 
 /* pagination code from http://www.bootply.com/lxa0FF9yhw */

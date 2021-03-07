@@ -1,3 +1,12 @@
+/*
+File Name: books.js
+Student Name : Chaitanya Sai Ambarukhana
+Student ID : 301150058
+Date : 07/03/2021
+App Name : Favorite Book List - Midterm
+*/
+
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();
@@ -51,7 +60,7 @@ router.post('/add', (req, res, next) => {
     
 });
 
-// GET the Book Details page in order to edit an existing Book
+// GET the Book Details page in order to edit an existing Book *UPDATE
 
 router.get('/:id', (req, res, next) => {
   let id = req.params.id;
@@ -92,7 +101,7 @@ router.post('/:id', (req, res, next) => {
     
 });
 
-// GET - process the delete by user id
+// GET - process the delete by user id *DELETE
 router.get('/delete/:id', (req, res, next) => {
   let id = req.params.id
 
